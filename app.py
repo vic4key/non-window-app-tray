@@ -1,12 +1,9 @@
-# pyinstaller --onefile --noconsole tray.py
-
-import os
-from dotenv import load_dotenv
-import logging
-from looper import Looper
+import os, logging
 from tray import Tray
+from looper import Looper
 
 # Load environment variables
+from dotenv import load_dotenv
 load_dotenv()
 if http_proxy := os.environ.get("HTTP_PROXY"):
     os.environ["http_proxy"] = http_proxy
@@ -23,11 +20,9 @@ logging.basicConfig(
 
 def main():
     delay = 1.0
-    if __delay := os.environ.get("MAIN_LOOP_TIME"):
-        try:
-            delay = float(__delay)
-        except Exception:
-            pass
+    if temp := os.environ.get("MAIN_LOOP_TIME"):
+        try: delay = float(temp)
+        except Exception: pass
     looper = Looper(interval=delay)
     app = Tray(looper)
     app.run()

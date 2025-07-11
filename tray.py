@@ -1,6 +1,6 @@
+import time
 import PySimpleGUI as sg
 from psgtray import SystemTray
-import time
 
 class Tray:
     def __init__(self, worker):

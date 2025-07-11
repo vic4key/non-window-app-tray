@@ -1,5 +1,3 @@
-# Định nghĩa các hàm xử lý nền cho app tray
-
 def main_init():
     print("main_init")
 
