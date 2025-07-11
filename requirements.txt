@@ -1,0 +1,4 @@
+psgtray
+PySimpleGUI
+python-dotenv
+pyinstaller
