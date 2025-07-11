@@ -15,7 +15,7 @@ os.environ["no_proxy"] = "127.0.0.1,localhost,.local"
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s %(levelname)s %(message)s',
-    handlers=[logging.FileHandler("app.log"), logging.StreamHandler()]
+    handlers=[logging.FileHandler("log.log"), logging.StreamHandler()]
 )
 
 def main():

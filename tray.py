@@ -26,6 +26,6 @@ class Tray:
             if event == 'About':
                 self.tray.show_message(title="About", message="This is a non-window app tray @ Vic P.")
             else:
-                self.tray.show_message(title=event, message="This is a non-window app tray @ Vic P.")
+                self.tray.show_message(title=event, message=event)
         self.tray.close()
         self.window.close() 
