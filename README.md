@@ -1,12 +1,16 @@
-# 🚀 No-Window App Tray Boilerplate
+# 🚀 Non-Window Application with System Tray
 
-A python template for a non-window application with a system tray.
+A python boilerplate for a non-window application with a system tray.
 It helps you easily and quickly create applications that run in the background. 🚀
 
 ## ✨ Features
 - 🖥️ Support system tray menu
 - 🔄 Easy to extend background logic in `main.py`
 - ⚙️ Flexible configuration via `.env`
+
+## License
+- 🪪 Released under the [MIT](LICENSE) license
+- ©️ Copyright © Vic P. & Vibe Coding ❤️
 
 ## 📦 Installation
 1. 🐍 Install Python 3
@@ -19,8 +23,6 @@ It helps you easily and quickly create applications that run in the background. 
 
 ## 🛠️ Packaging
 Create a standalone executable: `pyinstaller --onefile --noconsole --name non-window-app-tray.exe --icon vic.ico app.py`
-
-Template by Vic P. and Vibe Coding ❤️
 
 ## 📬 Contact
 Feel free to contact via [Twitter](https://twitter.com/vic4key) / [Gmail](mailto:vic4key@gmail.com) / [Blog](https://blog.vic.onl/) / [Website](https://vic.onl/)
