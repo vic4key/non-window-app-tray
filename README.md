@@ -22,7 +22,7 @@ It helps you easily and quickly create applications that run in the background. 
 3. 🏃‍➡️ Run the app: `python3 app.py`
 
 ## 🛠️ Packaging
-Create a standalone executable: `pyinstaller --onefile --noconsole --name non-window-app-tray.exe --icon vic.ico app.py`
+Create a standalone executable: `pyinstaller --clean --distpath=dist app.spec`
 
 ## 📬 Contact
 Feel free to contact via [Twitter](https://twitter.com/vic4key) / [Gmail](mailto:vic4key@gmail.com) / [Blog](https://blog.vic.onl/) / [Website](https://vic.onl/)
