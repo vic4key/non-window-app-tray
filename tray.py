@@ -10,10 +10,11 @@ class Tray:
 
     def run(self):
         layout = [[sg.T('Empty Window', key='-T-')]]
-        menu = ['', ['About', 'Exit']]
+        menu = ['', ['Information', 'Exit']]
+        description = "Non-Window Application with System Tray @ Vic P."
         self.window = sg.Window('Window Title', layout, finalize=True, enable_close_attempted_event=True, alpha_channel=0)
         self.window.hide()
-        self.tray = SystemTray(menu, single_click_events=False, window=self.window, tooltip='Tooltip', icon=sg.DEFAULT_BASE64_ICON, key='-TRAY-')
+        self.tray = SystemTray(menu, single_click_events=False, window=self.window, tooltip=description, icon=sg.DEFAULT_BASE64_ICON, key='-TRAY-')
         self.worker.start()
         while True:
             event, values = self.window.read()
@@ -23,8 +24,8 @@ class Tray:
                 self.worker.stop()
                 time.sleep(1)
                 break
-            if event == 'About':
-                self.tray.show_message(title="About", message="This is a non-window app tray @ Vic P.")
+            if event == 'Information':
+                self.tray.show_message(title="Information", message=description)
             else:
                 self.tray.show_message(title=event, message=event)
         self.tray.close()
