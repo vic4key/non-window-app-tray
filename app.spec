@@ -6,7 +6,7 @@ a = Analysis(
     ['app.py'],
     pathex=['.'],
     binaries=[],
-    # datas=[('sample', 'sample'), ('example', 'example')], # the list of folders that will be copied and included inside the dist app
+    # datas=[('sample', 'sample'), ('example', 'example')], # the list of folders that are in-app data and will be copied and included in the dist app
     hiddenimports=[],
     hookspath=[],
     runtime_hooks=[],

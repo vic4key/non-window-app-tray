@@ -38,7 +38,7 @@ VSVersionInfo(
             StringStruct(u'FileVersion', u'1.0.0.0'),
             StringStruct(u'ProductVersion', u'1.0.0.0'),
             StringStruct(u'CompanyName', u'VN OS'),
-            StringStruct(u'LegalCopyright', u'Copyright (C) Vic P. 2025'),
+            StringStruct(u'LegalCopyright', u'Copyright (C) Vic P.'),
         ])
       ]), 
     VarFileInfo([VarStruct(u'Translation', [1033, 1200])])
