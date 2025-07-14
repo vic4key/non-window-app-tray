@@ -1,6 +1,5 @@
-pystray
 tendo
-plyer
+pystray
 Pillow
 python-dotenv
 pyinstaller

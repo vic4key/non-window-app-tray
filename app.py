@@ -2,7 +2,7 @@ import os, sys, logging
 from prefs import prefs_get
 from tray import Tray
 from looper import Looper
-from base import CURRENT_DIRECTORY, APP_ICON
+from base import CURRENT_DIRECTORY
 
 # Setup logging
 
