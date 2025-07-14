@@ -17,3 +17,8 @@ def get_current_directory(meipass: bool = False) -> str:
         except:
             result = os.path.abspath(".")
     return norm_path(result)
+
+def data(file: str) -> str | None:
+    from base import BUNDLE_DIRECTORY
+    file_path = os.path.join(BUNDLE_DIRECTORY, "data", file)
+    return file_path if os.path.exists(file_path) else None

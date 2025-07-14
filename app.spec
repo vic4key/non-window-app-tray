@@ -6,7 +6,7 @@ a = Analysis(
     ['app.py'],
     pathex=['.'],
     binaries=[],
-    # datas=[('sample', 'sample'), ('example', 'example')], # the list of folders that are in-app data and will be copied and included in the dist app
+    datas=[('data', 'data')], # the list of folders that are in-app data and will be copied and included in the dist app
     hiddenimports=[],
     hookspath=[],
     runtime_hooks=[],
@@ -31,7 +31,7 @@ exe = EXE(
     upx=False,
     upx_exclude=['vcruntime140.dll', 'ucrtbase.dll'],
     runtime_tmpdir=None,
-    icon='app.ico',
+    icon='data/app.ico',
     console=False,
     uac_admin=False,
     resources=[],

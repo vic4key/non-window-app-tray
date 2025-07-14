@@ -1,4 +1,5 @@
 psgtray
 PySimpleGUI
 python-dotenv
+tendo
 pyinstaller

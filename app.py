@@ -1,12 +1,16 @@
-import os, logging
+import os, sys, logging
+import PySimpleGUI as sg
+from prefs import prefs_get
 from tray import Tray
 from looper import Looper
-from base import CURRENT_DIRECTORY
+from base import CURRENT_DIRECTORY, APP_ICON
 
 # Setup logging
 
+logging_level = logging.DEBUG if prefs_get("debug", False) else logging.ERROR
+
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging_level,
     format='%(asctime)s %(levelname)s %(message)s',
     handlers=[logging.FileHandler("log.log"), logging.StreamHandler()]
 )
@@ -25,11 +29,16 @@ os.environ["no_proxy"] = "127.0.0.1,localhost,.local"
 # Entry Point
 
 def main():
-    delay = 1.0
-    if temp := os.environ.get("MAIN_LOOP_TIME"):
-        try: delay = float(temp)
-        except Exception: pass
-    looper = Looper(interval=delay)
+    # check app running
+    try:
+        from tendo import singleton
+        instance = singleton.SingleInstance()
+    except singleton.SingleInstanceException:
+        resp = sg.popup_yes_no("The application is already running.\nDo you want to run another instance?", title="Confirmation", icon=APP_ICON)
+        if not resp or resp.lower() == "no": sys.exit(0)
+    # run app instance
+    interval = prefs_get("interval", 1.0)
+    looper = Looper(interval=interval)
     app = Tray(looper)
     app.run()
 

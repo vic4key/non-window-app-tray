@@ -1,6 +1,7 @@
 import time
 import PySimpleGUI as sg
 from psgtray import SystemTray
+from base import APP_ICON
 
 class Tray:
     def __init__(self, worker):
@@ -14,7 +15,7 @@ class Tray:
         description = "Non-Window Application with System Tray @ Vic P."
         self.window = sg.Window('Window Title', layout, finalize=True, enable_close_attempted_event=True, alpha_channel=0)
         self.window.hide()
-        self.tray = SystemTray(menu, single_click_events=False, window=self.window, tooltip=description, icon=sg.DEFAULT_BASE64_ICON, key='-TRAY-')
+        self.tray = SystemTray(menu, single_click_events=False, window=self.window, tooltip=description, icon=APP_ICON, key='-TRAY-')
         self.worker.start()
         while True:
             event, values = self.window.read()
