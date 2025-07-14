@@ -7,8 +7,8 @@ from base import APP_ICON, APP_DESCRIPTION
 
 def ask_yes_no(title, message):
     root = tk.Tk()
-    root.withdraw()  # Hide main window
-    result = messagebox.askyesno(title, message)
+    root.withdraw()
+    result = messagebox.askyesno(title, message, default="no")
     root.destroy()
     return result
 
