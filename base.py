@@ -1,4 +1,3 @@
-import os
 from common import get_current_directory, data
 
 CURRENT_DIRECTORY = get_current_directory()

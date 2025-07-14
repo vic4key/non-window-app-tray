@@ -1,5 +1,4 @@
-import threading
-import logging
+import threading, logging
 from main import main_init, main_loop, main_exit
 
 class Looper:
