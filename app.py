@@ -1,5 +1,4 @@
 import os, sys, logging
-import PySimpleGUI as sg
 from prefs import prefs_get
 from tray import Tray
 from looper import Looper
@@ -34,8 +33,10 @@ def main():
         from tendo import singleton
         instance = singleton.SingleInstance()
     except singleton.SingleInstanceException:
-        resp = sg.popup_yes_no("The application is already running.\nDo you want to run another instance?", title="Confirmation", icon=APP_ICON)
-        if not resp or resp.lower() == "no": sys.exit(0)
+        from tray import ask_yes_no
+        resp = ask_yes_no("Confirmation", "The application is already running.\nDo you want to run another instance?")
+        if not resp:
+            sys.exit(0)
     # run app instance
     interval = prefs_get("interval", 1.0)
     looper = Looper(interval=interval)
